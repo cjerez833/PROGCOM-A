@@ -1,0 +1,215 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPK55+kKFb4zy+RMVbvBJza",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/cjerez833/PROGCOM-A/blob/main/tutututupem\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Casa:\n",
+        "  \"\"\"\n",
+        "  contruir el constructor\n",
+        "  argumentos\n",
+        "  color(str). color de la casa\n",
+        "  numero_habitaciones(int): el numero de habitaciones de la casa\n",
+        "  numero_baños(int): el numerode baños de la casaC\n",
+        "  estacionamiento(bool): si tiene estacionamiento o no\n",
+        "  tiene_patio(bool):si tiene patio o no\n",
+        "  \"\"\"\n",
+        "  def __init__(self,color,numero_habitaciones,numero_baños,estacionamiento,tiene_patio):\n",
+        "    self.color=color\n",
+        "    self.numero_habitaciones=numero_habitaciones\n",
+        "    self.numero_baños=numero_baños\n",
+        "    self.estacionamiento=estacionamiento\n",
+        "    self.tiene_patio=tiene_patio\n",
+        "\n",
+        "  def descripcion(self):\n",
+        "    #describir la casa\n",
+        "    descripcion=f\"la casa es de color {self.color}, tiene {self.numero_habitaciones},{self.numero_baños} baños\"\n",
+        "    if self.estacionamiento:\n",
+        "      descripcion += \"tiene estacionamiento\"\n",
+        "\n",
+        "    if self.tiene_patio:\n",
+        "      descripcion += \"tiene patio\"\n",
+        "    return descripcion\n",
+        "\n",
+        "  def pintar(self,nuevo_color):\n",
+        "    self.color=nuevo_color\n",
+        "    print(f\"la casa ha sido pintada de color {self.color}\")"
+      ],
+      "metadata": {
+        "id": "TcMcqe3wR7ma"
+      },
+      "execution_count": 32,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mi_casa=Casa(\"blue\",5,8,True,True)\n",
+        "type(mi_casa)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 186
+        },
+        "id": "PomkKsCiTdCx",
+        "outputId": "88d6de35-3a56-4f25-ed2d-3ad86e68ee5c"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "__main__.Casa"
+            ],
+            "text/html": [
+              "<div style=\"max-width:800px; border: 1px solid var(--colab-border-color);\"><style>\n",
+              "      pre.function-repr-contents {\n",
+              "        overflow-x: auto;\n",
+              "        padding: 8px 12px;\n",
+              "        max-height: 500px;\n",
+              "      }\n",
+              "\n",
+              "      pre.function-repr-contents.function-repr-contents-collapsed {\n",
+              "        cursor: pointer;\n",
+              "        max-height: 100px;\n",
+              "      }\n",
+              "    </style>\n",
+              "    <pre style=\"white-space: initial; background:\n",
+              "         var(--colab-secondary-surface-color); padding: 8px 12px;\n",
+              "         border-bottom: 1px solid var(--colab-border-color);\"><b>Casa</b><br/>def __init__(color, numero_habitaciones, numero_baños, estacionamiento, tiene_patio)</pre><pre class=\"function-repr-contents function-repr-contents-collapsed\" style=\"\"><a class=\"filepath\" style=\"display:none\" href=\"#\"></a>contruir el constructor\n",
+              "argumentos\n",
+              "color(str). color de la casa\n",
+              "numero_habitaciones(int): el numero de habitaciones de la casa\n",
+              "numero_baños(int): el numerode baños de la casaC\n",
+              "estacionamiento(bool): si tiene estacionamiento o no\n",
+              "tiene_patio(bool):si tiene patio o no</pre></div>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 33
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(mi_casa.descripcion())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MPq-wDalXLBU",
+        "outputId": "624dadf3-2e58-4f91-e0bb-63e4ae7c6da7"
+      },
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "la casa es de color blue, tiene 5,8 bañostiene estacionamientotiene patio\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mi_casa.pintar(\"azul\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "q6W6rtRkXhXk",
+        "outputId": "df84641d-8f80-44a5-bd95-f30a03a4242e"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "la casa ha sido pintada de color azul\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Floristeria(Casa):\n",
+        "  \"\"\"\n",
+        "  Constructor de la floristeria\n",
+        "  Argumentos:\n",
+        "  color(str): color de la floristeria\n",
+        "  numero_habitaciones(int): el numero de habitaciones de la floristeria\n",
+        "  numero_baños(int): el numero de baños de la floristeria\n",
+        "  tipos_flores(list): lista de flores\n",
+        "  nombre_floristeria: mombre de la floristeria\n",
+        "  \"\"\"\n",
+        "  def __init__(self, color, numero_habitaciones, numero_baños, nombre_floristeria, tipos_flores):\n",
+        "    super().__init__(color, numero_habitaciones, numero_baños, True, True)\n",
+        "    self.nombre_floristeria=nombre_floristeria\n",
+        "    self.tipos_flores=tipos_flores"
+      ],
+      "metadata": {
+        "id": "dYfPdbtEXqRL"
+      },
+      "execution_count": 40,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mi_floristeria=Floristeria(\"amarillo\",1,1,\"Floristeria\",[\"petunia\",\"hortalizas\",\"rosas\"])\n",
+        "print(mi_floristeria.descripcion())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "b-yODiGja1Ch",
+        "outputId": "d900eb4f-735c-4cf2-efa5-0958bf1316dc"
+      },
+      "execution_count": 47,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "la casa es de color amarillo, tiene 1,1 bañostiene estacionamientotiene patio\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
